@@ -1,0 +1,18 @@
+const http = require('http');
+
+var server = http.createServer(
+  (request, response) => {
+    response.setHeader('Content-Type', 'text/html');
+    response.write('<!DOCTYPE html><html lang="ja">');
+    response.write('<head><meta charset="utf-8">');
+    response.write('<title>Hello</title></head>');
+    response.write('<body><h1>Hello Node.js!</h1>');
+    response.write('<p>This is my first Node.js sample page.</p>');
+    response.write('<p>これは、私が初めて作ったNode.jsのサンプルページです。</p>', 'utf8');
+    response.write('</body></html>');
+    response.end();
+  }
+);
+
+server.listen(3000);
+console.log('Server start!');
